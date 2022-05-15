@@ -16,7 +16,7 @@ const DEBOUNCE_DELAY = 300;
 refs.input.addEventListener('input',debounce((e) => {
     refs.countryInfo.innerHTML = '';
     refs.countryList.innerHTML = '';
-    const countryName = e.target.value;
+    const countryName = e.target.value.trim();
         fetchCountries(countryName).then(response => {
             
             if (response.length > maxRenderItems) {
